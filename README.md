@@ -1,27 +1,27 @@
-# Slim Framework 3 Skeleton Application
+#API
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+Use JSON format for Request and Response
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+#GET Routes
+* /getCompany/{id}		=> Get one specified company
+* /getListCompany		=> Get all company
+* /getUser/{id}			=> Get one specified user
+* /getListUser			=> Get all user
+* /getBudgetCompany/{id}	=> Get one specified company budget
+* /getListBudgetCompany		=> Get all company budget
+* /getLogTransaction		=> Get all transaction log
 
-## Install the Application
+#POST Routes
+* /createUser			=> Create new user
+* /createCompany		=> Create new company
+* /reimburse			=> Create reimburse transaction
+* /disburse			=> Create disburse transaction
+* /close			=> Create close transaction
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+#PUT Routes
+* /updateUser/{id}		=> Update one specified user
+* /updateCompany/{id}		=> Update specified company
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
-
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
-
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-To run the application in development, you can run these commands 
-
-	cd [my-app-name]
-	php composer.phar start
-
-Run this command in the application directory to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
+#DELETE Routes
+* /deletetUser/{id}		=> Delete one specified user
+* /deleteCompany/{id}			=> Get one specified user
