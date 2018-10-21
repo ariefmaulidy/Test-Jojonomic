@@ -49,15 +49,16 @@ class CompanyController {
 
     public function updateCompany(Request $request, Response $response, $args){
         $input = $request->getParsedBody();
-        $company = Company::where('id',args['id'])->update([
+        $company = Company::where('id',$args['id'])->update([
             'name'=>$input['name'],
             'address'=>$input['address']
         ]);
+        $company = Company::find($args['id']);
         return $response->withJson($company);
     }
 
     public function deleteCompany(Request $request, Response $response, $args){
-        $company = Company::destroy(args['id']);
+        $company = Company::destroy($args['id']);
         return $response->withJson($company);
     }
 }

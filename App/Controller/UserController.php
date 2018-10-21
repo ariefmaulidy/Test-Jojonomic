@@ -23,23 +23,30 @@ class UserController {
     {
         $input = $request->getParsedBody();
         $user = User::create([
-            'name'=>$input['name'],
-            'address'=>$input['address']
+            'first_name'=>$input['first_name'],
+            'last_name'=>$input['last_name'],
+            'email'=>$input['email'],
+            'account'=>$input['account'],
+            'company_id'=>$input['company_id']
         ]);
         return $response->withJson($user);
     }
 
     public function updateUser(Request $request, Response $response, $args){
         $input = $request->getParsedBody();
-        $user = User::where('id',args['id'])->update([
-            'name'=>$input['name'],
-            'address'=>$input['address']
+        $user = User::where('id',$args['id'])->update([
+            'first_name'=>$input['first_name'],
+            'last_name'=>$input['last_name'],
+            'email'=>$input['email'],
+            'account'=>$input['account'],
+            'company_id'=>$input['company_id']
         ]);
+        $user = User::find($args['id']);
         return $response->withJson($user);
     }
 
     public function deleteuser(Request $request, Response $response, $args){
-        $user = User::destroy(args['id']);
+        $user = User::destroy($args['id']);
         return $response->withJson($user);
     }
 }
