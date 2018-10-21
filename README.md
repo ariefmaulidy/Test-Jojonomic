@@ -1,8 +1,8 @@
-#API
+# API
 
 Use JSON format for Request and Response
 
-#GET Routes
+# GET Routes
 * /getCompany/{id}		=> Get one specified company
 * /getListCompany		=> Get all company
 * /getUser/{id}			=> Get one specified user
@@ -11,17 +11,17 @@ Use JSON format for Request and Response
 * /getListBudgetCompany		=> Get all company budget
 * /getLogTransaction		=> Get all transaction log
 
-#POST Routes
+# POST Routes
 * /createUser			=> Create new user
 * /createCompany		=> Create new company
 * /reimburse			=> Create reimburse transaction
 * /disburse			=> Create disburse transaction
 * /close			=> Create close transaction
 
-#PUT Routes
+# PUT Routes
 * /updateUser/{id}		=> Update one specified user
 * /updateCompany/{id}		=> Update specified company
 
-#DELETE Routes
+# DELETE Routes
 * /deletetUser/{id}		=> Delete one specified user
 * /deleteCompany/{id}			=> Get one specified user
